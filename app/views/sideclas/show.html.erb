@@ -1,0 +1,20 @@
+
+<%= render 'unhead'%>
+<div class="container fluid-height clearfix">
+
+
+  <h2 class="heading"><i class="icon-random"></i>&nbsp; 类别信息</h2>
+  <div class="widget-container">
+
+    <!--左边样式-->
+    <div class="col-md-12 fluid-height ">
+      <p>
+        <span class="col-md-12" style="text-align: right;">名称:</span>
+        <%= @sidecla.name %>&nbsp;
+      </p>
+      <%= link_to '返回', sideclas_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true %>
+    </div>
+
+  </div>
+
+</div>

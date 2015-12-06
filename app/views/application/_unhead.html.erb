@@ -1,0 +1,50 @@
+<header id="header">
+  <div class="navbar">
+    <div class="top-bar" style="background-color: #f9fafa">
+      <div class="slidedown-collapse">
+        <div class="container" >
+          <div style="float: right;margin-right: -22.7%;">
+            <ul>
+              <li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: #0062cc">
+                <%= session[:admin_name]%><b class="caret"></b></a>
+                <ul class="dropdown-menu" style="margin-top: 8px;">
+                  <li><a href="/logins/new" data-no-turbolink>
+                    <i class="icon-signout">退出</i></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-fluid main-nav clearfix">
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="/admins">
+            <span aria-hidden="true" class="icon-gears"></span>管理员设置</a>
+          </li>
+          <li><a href="/sidecfgs">
+            <span aria-hidden="true" class="icon-male"></span>全局设置</a>
+          </li>
+          <li><a href="/sideclas">
+            <span aria-hidden="true" class="icon-sitemap"></span>产品类别</a>
+          </li>
+          <li><a href="/sidecontents">
+            <span aria-hidden="true" class="icon-user"></span>新闻中心</a>
+          </li>
+          <li><a href="/sideproducts">
+            <span aria-hidden="true" class="icon-calendar"></span>产品</a>
+          </li>
+          <li><a href="/advertisements">
+            <span aria-hidden="true" class="icon-picture"></span>广告</a>
+          </li>
+          <li><a href="/sideabouts">
+            <span aria-hidden="true" class="icon-reorder"></span>联系我们</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

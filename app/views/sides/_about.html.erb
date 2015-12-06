@@ -1,0 +1,37 @@
+
+<%=render 'head'%>
+
+<% @sideabouts.each do |sideabout| %>
+<!-- 关于澳昇开始 -->
+<div class="Cons">公司简介</div>
+<div class="us">
+  <td><%= sideabout.about.html_safe %></td>
+</div>
+
+<div class="Cons">企业文化</div>
+<div class="us">
+  <td><%= sideabout.culture.html_safe %></td>
+</div>
+
+
+<div class="Cons">荣誉资质</div>
+<div class="us">
+  <td><%= sideabout.qualification.html_safe %></td>
+</div>
+
+
+<div class="Cons">环保理念</div>
+<div class="us">
+  <td><%= sideabout.concept.html_safe %></td>
+</div>
+
+
+
+<div class="Cons">总经理致辞</div>
+<div class="us">
+  <td><%= sideabout.speech.html_safe %></td>
+</div>
+<!-- 关于澳昇结束 -->
+<%end%>
+
+<%=render 'footer'%>

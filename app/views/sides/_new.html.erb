@@ -1,0 +1,18 @@
+<%=render 'head'%>
+<!-- 最新资讯开始 -->
+<div class="Cons">最新资讯</div>
+<div class="Cons_news">
+  <ul>
+    <% @sidecontents.each do |sidecontent| %>
+        <li><a href="/sides/<%=sidecontent.id%>?cla=new"><p><%=sidecontent.title%></p></a></li>
+    <%end%>
+  </ul>
+</div>
+<!-- 最新资讯资讯结束 -->
+<!-- 翻页开始开始 -->
+<div class="page">
+  <%= will_paginate @sidecontents, :previous_label => '上一页', :next_label => '下一页' %>
+</div>
+<!-- 翻页开始结束 -->
+
+<%=render 'footer'%>

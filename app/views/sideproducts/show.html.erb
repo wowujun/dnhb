@@ -1,0 +1,44 @@
+<%=render 'unhead' %>
+
+<div class="container fluid-height clearfix">
+
+  <div class="row">
+    <div class="col-lg-12" style="width: 100%" >
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-5">
+          <h4 class="icon-desktop">&nbsp;详细内容</h4><p></p>
+
+          <p>
+            <span class="col-sm-3" style="text-align: right;">标题:</span>
+            <%= @sideproduct.title %>&nbsp;
+          </p>
+
+          <p>
+            <span class="col-sm-3" style="text-align: right;">内容:</span>
+            <%= @sideproduct.content %>&nbsp;
+          </p>
+          <p>
+            <span class="col-sm-3" style="text-align: right;">类别:</span>
+            <%@sidecla = Sidecla.find(@sideproduct.sidecla_id)%>
+            <%= @sidecla.name %>&nbsp;
+          </p>
+
+          <p>
+            <%= link_to '编辑', edit_sideproduct_path(@sideproduct),class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>
+          </p>
+
+        </div>
+
+        <div class="col-lg-7 cts-leftborder-container">
+          <h4 class="icon-desktop">&nbsp;内容</h4><p></p>
+          <p>
+            <%= @sideproduct.image.html_safe %>
+          </p>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>

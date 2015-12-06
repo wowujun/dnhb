@@ -1,0 +1,18 @@
+﻿<%if !params[:keywords]%>
+    <%=render 'index'%>
+<%end%>
+<%if params[:keywords]=='index'%>
+    <%=render 'index'%>
+<%end%>
+<%if params[:keywords]=='products'%>
+    <%=render 'product'%>
+<%end%>
+<%if params[:keywords]=='news'%>
+    <%=render 'new'%>
+<%end%>
+<%if params[:keywords]=='abouts'%>
+    <%=render 'about'%>
+<%end%>
+<%if params[:keywords]=='contacts'%>
+    <%=render 'contact'%>
+<%end%>

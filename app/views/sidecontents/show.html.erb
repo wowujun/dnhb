@@ -1,0 +1,37 @@
+<%=render 'unhead' %>
+
+<div class="container fluid-height clearfix">
+
+
+
+
+  <div class="row">
+    <div class="col-lg-12" style="width: 100%" >
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-12">
+          <h4 class="icon-desktop">&nbsp;详细内容</h4><p></p>
+
+          <p>
+            <span class="col-sm-12" style="text-align: right;">标题:</span>
+            <%= @sidecontent.title %>&nbsp;
+          </p>
+
+          <p>
+            <span class="col-sm-12" style="text-align: right;">日期:</span>
+            <%= @sidecontent.date %>&nbsp;
+          </p>
+          <p>
+            <span class="col-sm-12" style="text-align: right;">内容:</span>
+            <%= @sidecontent.content %>&nbsp;
+          </p>
+
+          <p>
+            <%= link_to '编辑', edit_sidecontent_path(@sidecontent),class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

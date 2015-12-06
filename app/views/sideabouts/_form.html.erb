@@ -1,0 +1,55 @@
+<%= form_for(@sideabout) do |f| %>
+  <% if @sideabout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sideabout.errors.count, "error") %> prohibited this sideabout from being saved:</h2>
+
+      <ul>
+      <% @sideabout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <tr>
+      <div class="form-group">
+        <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :about, "公司简介" %></td>
+        <td><%= f.kindeditor :about, class:"form-control" %></td>
+      </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+        <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :culture, "企业文化" %></td>
+        <td><%= f.kindeditor :culture, class:"form-control" %></td>
+      </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+        <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :qualification, "荣誉资质" %></td>
+        <td><%= f.kindeditor :qualification, class:"form-control" %></td>
+      </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+        <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :concept, "环保理念" %></td>
+        <td><%= f.kindeditor :concept, class:"form-control" %></td>
+      </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+        <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :speech, "总经理致辞" %></td>
+        <td><%= f.kindeditor :speech, class:"form-control" %></td>
+      </div>
+    </tr>
+    <tr>
+      <td align="right" colspan="2" style="padding: 0px;"><div class="actions">
+        <%= f.submit :"确定", class:"btn btn-primary-outline pull-right" %>
+      </div></td>
+    </tr>
+<% end %>
+
+

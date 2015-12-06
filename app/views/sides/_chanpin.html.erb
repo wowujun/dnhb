@@ -1,0 +1,13 @@
+<%render 'head'%>
+<!-- 最终页介绍开始 -->
+
+<div class="Cons"><a href="index.html">首页</a> > <a href="consultation.html">产品展示</a></div>
+<div class="end">
+  <div class="end_title"><%=@sideproduct.title%></div>
+  <div class="end_con">
+    <%=@sideproduct.image.html_safe%>
+    <p> <%=@sideproduct.content.html_safe%></p>
+  </div>
+</div>
+<!-- 最终页介绍结束 -->
+<%render 'footer'%>

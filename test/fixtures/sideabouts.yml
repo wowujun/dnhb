@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  about: MyText
+  culture: MyText
+  qualification: MyText
+  concept: MyText
+  speech: MyText
+
+two:
+  about: MyText
+  culture: MyText
+  qualification: MyText
+  concept: MyText
+  speech: MyText

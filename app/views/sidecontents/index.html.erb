@@ -1,0 +1,39 @@
+<%=render 'unhead' %>
+
+<div class="container fluid-height clearfix">
+
+  <h2 class="heading">新闻录入</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
+      <tr>
+        <th></th>
+
+        <th>标题</th>
+        <th>日期</th>
+        <th>内容</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @sidecontents.each do |sidecontent| %>
+          <tr>
+            <td><i class="icon-user"></i></td>
+            <td><%= sidecontent.title %></td>
+            <td><%= sidecontent.date.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <td><%= sidecontent.content %></td>
+            <td><%= link_to "", sidecontent,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', sidecontent, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <div class="sabrosus">
+      <%= will_paginate @sidecontents, :previous_label => '上一页', :next_label => '下一页' %>
+    </div>
+    <br>
+
+    <%= link_to ' 新建新闻', new_sidecontent_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

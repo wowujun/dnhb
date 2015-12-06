@@ -1,0 +1,43 @@
+
+<%= render 'unhead'%>
+<div class="container fluid-height clearfix">
+
+
+  <h2 class="heading"><i class="icon-random"></i>&nbsp; 公司信息</h2>
+  <div class="widget-container clearfix">
+
+    <!--左边样式-->
+    <div class="col-md-12 fluid-height ">
+      <p>
+        <span class="col-md-12" style="text-align: right;">公司简介:</span>
+        <%= @sideabout.about %>&nbsp;
+      </p>
+
+      <p>
+        <span class="col-sm-12" style="text-align: right;">企业文化:</span>
+        <%= @sideabout.culture %>&nbsp;
+      </p>
+
+      <p>
+        <span class="col-sm-12" style="text-align: right;width: auto">荣誉资质:</span>
+        <%= @sideabout.qualification %>&nbsp;
+      </p>
+
+      <p>
+        <span class="col-sm-3" style="text-align: right;">环保理念:</span>
+        <%= @sideabout.concept %>&nbsp;
+      </p>
+
+      <p>
+        <span class="col-sm-3" style="text-align: right;">总经理致辞:</span>
+        <%=  @sideabout.speech %>
+      </p>
+      <p>
+        <%= link_to '编辑', edit_sideabout_path(@sideabout),class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>
+      </p>
+      <p>
+        <%= link_to '返回', sideabouts_path,class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>
+      </p>
+    </div>
+  </div>
+</div>

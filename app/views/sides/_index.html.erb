@@ -1,0 +1,25 @@
+<%=render "head"%>
+<!-- 新闻资讯开始 -->
+<div class="Cons">最新资讯<span><%= link_to '更多>>',sides_path(keywords:"news"),class: params[:keywords]=='news'?'current-link':'menu','data-no-turbolink'=>true %></span></div>
+<div class="Cons_news">
+  <ul>
+    <% @sidecontent.each do |sidecontent| %>
+        <li><a href="/sides/<%=sidecontent.id%>?cla=new">·<%=sidecontent.title%><span>></span></a></li>
+    <%end%>
+  </ul>
+</div>
+<!-- 新闻资讯结束 -->
+
+<!-- 澳昇品牌项目开始 -->
+<div class="Cons">产品展示</div>
+<div class="brand">
+  <ul>
+    <% @sideproduct.each do |sideproduct| %>
+        <%@sidecla=Sidecla.find(sideproduct.sidecla_id)%>
+        <li><a href="/sides/<%=sideproduct.id%>?cla=product"><%=sideproduct.image.html_safe%></a><p><%=@sidecla.name%></p></li>
+    <%end%>
+
+  </ul>
+</div>
+<!-- 澳昇品牌项目结束 -->
+<%=render "footer"%>

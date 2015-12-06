@@ -1,0 +1,21 @@
+<%=render "head"%>
+<!-- 移民项目开始 -->
+<% @sideclas.each do |sidecla| %>
+<!-- 移民项目结束 -->
+    <div class="Cons"><%=sidecla.name%></div>
+    <div class="brand">
+      <ul>
+        <%@sideproduct =sidecla.sideproducts.paginate(page: params[:page],per_page:6) %>
+        <% @sideproduct.each do |sideproduct| %>
+            <li><a href="/sides/<%=sideproduct.id%>?cla=product"><%=sideproduct.image.html_safe%></a><p><%=sideproduct.title%></p></li>
+        <%end%>
+</ul>
+
+</div>
+    <div class="page">
+      <%= will_paginate @sideproduct, :previous_label => '上一页', :next_label => '下一页' %>
+    </div>
+<%end%>
+
+
+<%=render "footer"%>

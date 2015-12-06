@@ -1,0 +1,12 @@
+<%render 'head'%>
+  <!-- 最终页介绍开始 -->
+  <div class="Cons"><a href="index.html">首页</a> > <a href="consultation.html">最新资讯</a></div>
+  <div class="end">
+    <div class="end_title"><%=@sidecontent.title%></div>
+    <div class="end_num"><%=@sidecontent.date.strftime("%Y-%m-%d %H:%M:%S")%></div>
+    <div class="end_con">
+      <%=@sidecontent.content.html_safe%>
+    </div>
+  </div>
+  <!-- 最终页介绍结束 -->
+<%render 'footer'%>
