@@ -64,4 +64,5 @@
 
 //= require main.js
 
+//= require zh_CN.js
 
