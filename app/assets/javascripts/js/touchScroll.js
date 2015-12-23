@@ -1,3 +1,4 @@
+ï»¿
 /**
  * TouchSlider v1.2.4
  * By qiqiboy, http://www.qiqiboy.com, http://weibo.com/qiqiboy, 2012/12/05
@@ -88,13 +89,13 @@
 		}
 
 	TouchSlider.fn=TouchSlider.prototype={
-		//Ä¬ÈÏÅäÖÃ
+		//é»˜è®¤é…ç½®
 		_default: {
-			'id':'slider', //»ÃµÆÈİÆ÷µÄid
+			'id':'slider', //å¹»ç¯å®¹å™¨çš„id
 			'begin':0,
-			'auto':true, //ÊÇ·ñ×Ô¶¯¿ªÊ¼£¬¸ºÊı±íÊ¾·Ç×Ô¶¯¿ªÊ¼£¬0,1,2,3....±íÊ¾×Ô¶¯¿ªÊ¼ÒÔ¼°´ÓµÚ¼¸¸ö¿ªÊ¼
-			'speed':600, //¶¯»­Ğ§¹û³ÖĞøÊ±¼ä ms
-			'timeout':5000,//»ÃµÆ¼ä¸ôÊ±¼ä ms,
+			'auto':true, //æ˜¯å¦è‡ªåŠ¨å¼€å§‹ï¼Œè´Ÿæ•°è¡¨ç¤ºéè‡ªåŠ¨å¼€å§‹ï¼Œ0,1,2,3....è¡¨ç¤ºè‡ªåŠ¨å¼€å§‹ä»¥åŠä»ç¬¬å‡ ä¸ªå¼€å§‹
+			'speed':600, //åŠ¨ç”»æ•ˆæœæŒç»­æ—¶é—´ ms
+			'timeout':5000,//å¹»ç¯é—´éš”æ—¶é—´ ms,
 			'direction':'left', //left right up down
 			'align':'center',
 			'fixWidth':true,
@@ -102,7 +103,7 @@
 			'before':new Function,
 			'after':new Function
 		},
-		//ÉèÖÃOR»ñÈ¡½ÚµãÑùÊ½
+		//è®¾ç½®ORè·å–èŠ‚ç‚¹æ ·å¼
 		css:function(elem,css){
 			if(typeof css=='string'){
 				var style=document.defaultView && document.defaultView.getComputedStyle && getComputedStyle(elem, null) || elem.currentStyle || elem.style || {};
@@ -120,7 +121,7 @@
 				}
 			}
 		},
-		//°ó¶¨ÊÂ¼ş
+		//ç»‘å®šäº‹ä»¶
 		addListener:function(e, n, o, u){
 			if(e.addEventListener){
 				e.addEventListener(n, o, u);
@@ -172,13 +173,13 @@
 			evt.origEvent=origEvt;
 			return evt;
 		},
-		//ĞŞÕıº¯Êı×÷ÓÃ»·¾³
+		//ä¿®æ­£å‡½æ•°ä½œç”¨ç¯å¢ƒ
 		bind:function(func, obj){
 			return function(){
 				return func.apply(obj, arguments);
 			}
 		},
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		setup: function(){
 			this.slides=children(this.element);
 			this.length=this.slides.length;
@@ -270,7 +271,7 @@
 			index=Math.min(Math.max(0,index),this.length-1);
 			speed=typeof speed=='undefined' ? this.cfg.speed : parseInt(speed);
 			endPos=this.getPos(type,index);
-			change=endPos-nowPos, //±ä»¯Á¿
+			change=endPos-nowPos, //å˜åŒ–é‡
 			speed=Math.abs(change)<size?Math.ceil(Math.abs(change)/size*speed):speed;
 			if(transition){
 				css[transition]=direction+' ease '+speed+'ms';
@@ -278,9 +279,9 @@
 				this.css(this.element,css);
 			}else{
 				var _this=this,
-					begin=0, //¶¯»­¿ªÊ¼Ê±¼ä
-					time=speed/10,//¶¯»­³ÖĞøÊ±¼ä
-					animate=function(t,b,c,d){ //»º¶¯Ğ§¹û¼ÆËã¹«Ê½
+					begin=0, //åŠ¨ç”»å¼€å§‹æ—¶é—´
+					time=speed/10,//åŠ¨ç”»æŒç»­æ—¶é—´
+					animate=function(t,b,c,d){ //ç¼“åŠ¨æ•ˆæœè®¡ç®—å…¬å¼
 						return -c * ((t=t/d-1)*t*t*t - 1) + b;
 					},
 					run=function(){
@@ -362,9 +363,9 @@
 				offset=offset/((!this.index&&offset>0 || this.index==this.length-1&&offset<0) ? (Math.abs(offset)/this[type]+1) : 1);
 				this.element.style[direction]=this._pos+offset+'px';
 				if(offset&&typeof this.scrolling=='undefined'){
-					this.scrolling=true;//±ê¼ÇÍÏ¶¯£¨ÓĞĞ§´¥Ãş£©
-					clearTimeout(this.timer);//ÔİÍ£»ÃµÆ
-					clearTimeout(this.aniTimer);//ÔİÍ£¶¯»­
+					this.scrolling=true;//æ ‡è®°æ‹–åŠ¨ï¼ˆæœ‰æ•ˆè§¦æ‘¸ï¼‰
+					clearTimeout(this.timer);//æš‚åœå¹»ç¯
+					clearTimeout(this.aniTimer);//æš‚åœåŠ¨ç”»
 				}
 			}else this.scrolling=false;
 		},
@@ -379,7 +380,7 @@
 						myWidth,curPos,tarPos,
 						next=this.index,off=0;
 					this.addListener(this.element,'click',returnFalse);
-					if(absOff>20){//ÓĞĞ§ÒÆ¶¯¾àÀë
+					if(absOff>20){//æœ‰æ•ˆç§»åŠ¨è·ç¦»
 						curPos=parseFloat(this.css(this.element,sg[this.vertical][1]));
 						do{
 							if(next>=0 && next<this.length){
@@ -459,7 +460,7 @@ function TouchScroll(cfg){
 	}
 }
 TouchScroll.prototype={
-	/*Ä¬ÈÏ²ÎÊıÅäÖÃ*/
+	/*é»˜è®¤å‚æ•°é…ç½®*/
 	_default:{
 		'id': 'slider',
 		'width':4,
@@ -470,17 +471,17 @@ TouchScroll.prototype={
 		'color':'black',
 		'mouseAlign':1
 	},
-	/*´æ´¢µÄÊµÀı*/
+	/*å­˜å‚¨çš„å®ä¾‹*/
 	instances:[],
-	/*¸ù¾İid»ñÈ¡½Úµã
-	 * @param string id: Ä¿±ê½ÚµãµÄid
+	/*æ ¹æ®idè·å–èŠ‚ç‚¹
+	 * @param string id: ç›®æ ‡èŠ‚ç‚¹çš„id
 	 */
 	$:function(id){
 		return document.getElementById(id);	
 	},
-	/*´´½¨½Úµã£¬Ö§³Ö´´½¨Ê±¸³ÓèÊôĞÔ£¨styleÌØÊâ´¦Àí£©
-	 *@param string tag: ½ÚµãÀàĞÍ
-	 *@param Object attr: ÊôĞÔÅäÖÃ
+	/*åˆ›å»ºèŠ‚ç‚¹ï¼Œæ”¯æŒåˆ›å»ºæ—¶èµ‹äºˆå±æ€§ï¼ˆstyleç‰¹æ®Šå¤„ç†ï¼‰
+	 *@param string tag: èŠ‚ç‚¹ç±»å‹
+	 *@param Object attr: å±æ€§é…ç½®
 	 */
 	$C:function(tag,attr){
 		var el=document.createElement(tag) || null;
@@ -493,10 +494,10 @@ TouchScroll.prototype={
 		}
 		return el;
 	},
-	/*ÉèÖÃ»òÕß»ñÈ¡css
-	 *@param HTMLElement el: Òª´¦ÀíµÄ½Úµã
-	 *@param Object css: ÑùÊ½ÅäÖÃ
-	 *@param string css: Èç¹ûµÚ¶ş¸ö²ÎÊıcssÊÇ×Ö·û´®£¬¼´ÎªÑùÊ½µÄ¹Ø¼ü×Ö£¬Ôò·µ»Ø¶ÔÓ¦µÄÑùÊ½Öµ
+	/*è®¾ç½®æˆ–è€…è·å–css
+	 *@param HTMLElement el: è¦å¤„ç†çš„èŠ‚ç‚¹
+	 *@param Object css: æ ·å¼é…ç½®
+	 *@param string css: å¦‚æœç¬¬äºŒä¸ªå‚æ•°cssæ˜¯å­—ç¬¦ä¸²ï¼Œå³ä¸ºæ ·å¼çš„å…³é”®å­—ï¼Œåˆ™è¿”å›å¯¹åº”çš„æ ·å¼å€¼
 	 */
 	css:(function(){
 		var styleFilter=function(property){
@@ -551,7 +552,7 @@ TouchScroll.prototype={
 			return typeof css=='string' ? getStyle(el,css) : setStyle(el,css);
 		}
 	})(),
-	/*¸ñÊ½»¯²ÎÊı*/
+	/*æ ¼å¼åŒ–å‚æ•°*/
 	parseArgs:function(args){
 		var _d={},
 			toString=Object.prototype.toString;
@@ -562,7 +563,7 @@ TouchScroll.prototype={
 		else _d=this._default;
 		return _d;
 	},
-	/*ÊÂ¼ş¼àÌıº¯Êı*/
+	/*äº‹ä»¶ç›‘å¬å‡½æ•°*/
 	addListener:function(e,n,o,u){
 		if(e.addEventListener){
 			e.addEventListener(n, o, u);
@@ -573,7 +574,7 @@ TouchScroll.prototype={
 		}
 		return false;	
 	},
-	/*»ñÈ¡Êó±ê×ø±ê*/
+	/*è·å–é¼ æ ‡åæ ‡*/
 	getPoint:function(ev){
 		ev=ev||window.event;
 		var x=y=0,
@@ -610,7 +611,7 @@ TouchScroll.prototype={
 	},
 	fixedMouse:function(e,target){  
         var related,
-            type=e.type.toLowerCase();//ÕâÀï»ñÈ¡ÊÂ¼şÃû×Ö
+            type=e.type.toLowerCase();//è¿™é‡Œè·å–äº‹ä»¶åå­—
         if(type=='mouseover'){
             related=e.relatedTarget||e.fromElement
         }else if(type='mouseout'){
@@ -618,7 +619,7 @@ TouchScroll.prototype={
         }else return true;
         return !related || related.prefix!='xul' && !this.contains(target,related) && related!==target;
     },
-	/*³õÊ¼»¯*/
+	/*åˆå§‹åŒ–*/
 	setup:function(){
 		var doc=document.documentElement || document.getElementsByTagName('html')[0];
 		this.supportsTouches=("createTouch" in document) || ("ontouchstart" in window);
@@ -653,7 +654,7 @@ TouchScroll.prototype={
 		this.addListener(this.container,'DOMMouseScroll',this.bind(this.mouseScroll,this),false);
 		
 	},
-	/*Çå³ı»¹Ô­½Úµã½á¹¹ÒÔÕıÈ·»ñÈ¡´ËÊ±³ß´ç*/
+	/*æ¸…é™¤è¿˜åŸèŠ‚ç‚¹ç»“æ„ä»¥æ­£ç¡®è·å–æ­¤æ—¶å°ºå¯¸*/
 	clear:function(){
 		if(this.element){
 			this.css(this.container,{'visibility':'hidden'});
@@ -667,7 +668,7 @@ TouchScroll.prototype={
 			this.css(this.container,{'visibility':'visible'});
 		}
 	},
-	/*ÖØÖÃ*/
+	/*é‡ç½®*/
 	resize:function(){
 		this.clear();
 		var padX=parseInt(this.css(this.container,'padding-left'))+parseInt(this.css(this.container,'padding-right')),
@@ -692,31 +693,31 @@ TouchScroll.prototype={
 		this.verticalScrollBar=this.$C('div',{'class':'touchscrollbar vertical','style':scrollBarStyle});
 		this.horizontalBar.appendChild(this.horizontalScrollBar); this.verticalBar.appendChild(this.verticalScrollBar);
 		this.wrapper.appendChild(this.horizontalBar); this.wrapper.appendChild(this.verticalBar);
-		/*¹ö¶¯ÌõÑùÊ½*/
+		/*æ»šåŠ¨æ¡æ ·å¼*/
 		this.css(this.horizontalBar,{'display':this.scrollWidth>this.clientWidth?'block':'none','width':this.clientWidth+'px','left':0,'bottom':0,'height':this.cfg.width+'px'});
 		this.css(this.verticalBar,{'display':this.scrollHeight>this.clientHeight?'block':'none','height':this.clientHeight+'px','right':0,'top':0,'width':this.cfg.width+'px'});
 		this.container.appendChild(this.wrapper);
 		this.scrollHeight=Math.max(this.scrollHeight,this.element.clientHeight);
 		this.scrollWidth=Math.max(this.scrollWidth,this.element.clientWidth);
-		this.refresh(0); this.refresh(1);/*Ë¢ĞÂºáÏòºÍ×İÏò¹ö¶¯Ìõ*/
+		this.refresh(0); this.refresh(1);/*åˆ·æ–°æ¨ªå‘å’Œçºµå‘æ»šåŠ¨æ¡*/
 		
 		this.addListener(this.wrapper,this.startEvent,this.bind(this.start,this),false);
 	},
-	/*Ë¢ĞÂ¹ö¶¯ÌõÏÔÊ¾
-	 *@param Number flag: ·½Ïò£¬1»òÕß0,0Ë®Æ½£¬1´¹Ö±
+	/*åˆ·æ–°æ»šåŠ¨æ¡æ˜¾ç¤º
+	 *@param Number flag: æ–¹å‘ï¼Œ1æˆ–è€…0,0æ°´å¹³ï¼Œ1å‚ç›´
 	 */
 	refresh:function(flag,show){
 		flag=!!parseInt(flag)*1;
-		var total,//¿É¹ö¶¯ÇøÓò×Ü³¤¶È
-			maxLength,//¹ö¶¯Ìõ×î´ó³¤¶È
-			minLength,//¹ö¶¯Ìõ×îĞ¡³¤¶È
-			_length,//¹ö¶¯ÌõÕı³£³¤¶È
-			finalLength,//¹ö¶¯Ìõ×îÖÕ³¤¶È
-			finalOffset,//¹ö¶¯ÌõÎ»ÖÃ
-			fixOffset,//Î»ÖÃĞŞÕı
-			bar,//¹ö¶¯Ìõ
-			elementOffset,//½ÚµãµÄÆ«ÒÆÖµ,
-			ratio;//½ÚµãÒÆ¶¯µÄ¾àÀëÓë×Ü¾àÀëµÄ±ÈÂÊ
+		var total,//å¯æ»šåŠ¨åŒºåŸŸæ€»é•¿åº¦
+			maxLength,//æ»šåŠ¨æ¡æœ€å¤§é•¿åº¦
+			minLength,//æ»šåŠ¨æ¡æœ€å°é•¿åº¦
+			_length,//æ»šåŠ¨æ¡æ­£å¸¸é•¿åº¦
+			finalLength,//æ»šåŠ¨æ¡æœ€ç»ˆé•¿åº¦
+			finalOffset,//æ»šåŠ¨æ¡ä½ç½®
+			fixOffset,//ä½ç½®ä¿®æ­£
+			bar,//æ»šåŠ¨æ¡
+			elementOffset,//èŠ‚ç‚¹çš„åç§»å€¼,
+			ratio;//èŠ‚ç‚¹ç§»åŠ¨çš„è·ç¦»ä¸æ€»è·ç¦»çš„æ¯”ç‡
 		bar=this[this.property[flag][6]];
 		total=this[this.property[flag][4]];
 		maxLength=this[this.property[flag][3]];
@@ -802,38 +803,38 @@ TouchScroll.prototype={
 		}
 		this.slide(flag,distance,dtime,fx,callback);
 	},
-	/*ÈİÆ÷¹ö¶¯½Ó¿Ú£¬´ø»º¶¯Ğ§¹û
-	 *@param Number offx: Ë®Æ½·½ÏòÉÏ¹ö¶¯offx¾àÀë
-	 *@param Number offy: ´¹Ö±·½ÏòÉÏ¹ö¶¯offy¾àÀë
+	/*å®¹å™¨æ»šåŠ¨æ¥å£ï¼Œå¸¦ç¼“åŠ¨æ•ˆæœ
+	 *@param Number offx: æ°´å¹³æ–¹å‘ä¸Šæ»šåŠ¨offxè·ç¦»
+	 *@param Number offy: å‚ç›´æ–¹å‘ä¸Šæ»šåŠ¨offyè·ç¦»
 	 */
 	scroll:function(offx,offy){
 		for(var i=0;i<arguments.length;i++){
 			this._scroll(i,arguments[i]);
 		}
 	},
-	/*ÈİÆ÷¹ö¶¯½Ó¿Ú2
-	 *@param Number x: Ë®Æ½·½ÏòÉÏ¹ö¶¯ÖÁxÎ»ÖÃ
-	 *@param Number y: ´¹Ö±·½ÏòÉÏ¹ö¶¯ÖÁyÎ»ÖÃ
+	/*å®¹å™¨æ»šåŠ¨æ¥å£2
+	 *@param Number x: æ°´å¹³æ–¹å‘ä¸Šæ»šåŠ¨è‡³xä½ç½®
+	 *@param Number y: å‚ç›´æ–¹å‘ä¸Šæ»šåŠ¨è‡³yä½ç½®
 	 */
 	scrollTo:function(x,y){
 		this.css(this.element,{'left':-x+'px','top':-y+'px'});
 		this.refresh(0);this.refresh(1);
 	},
-	/*Ìá¹©»º¶¯Ğ§¹û
-	 *@param Number flag: ·½Ïò£¬1»òÕß0,0Ë®Æ½£¬1´¹Ö±
-	 *@param Number distance: ÒÆ¶¯µÄ¾àÀë
-	 *@param Number during: ¶¯»­³ÖĞøÊ±¼ä
-	 *@param String fx: »º¶¯Ğ§¹ûÃû³Æ
-	 *@param Function callback: ¶¯»­Íê³ÉºóµÄ»Øµ÷
+	/*æä¾›ç¼“åŠ¨æ•ˆæœ
+	 *@param Number flag: æ–¹å‘ï¼Œ1æˆ–è€…0,0æ°´å¹³ï¼Œ1å‚ç›´
+	 *@param Number distance: ç§»åŠ¨çš„è·ç¦»
+	 *@param Number during: åŠ¨ç”»æŒç»­æ—¶é—´
+	 *@param String fx: ç¼“åŠ¨æ•ˆæœåç§°
+	 *@param Function callback: åŠ¨ç”»å®Œæˆåçš„å›è°ƒ
 	 */
 	slide:function(flag,distance,during,fx,callback){
 		var _this=this, _callback=callback||new Function(),
-			_init=parseInt(this.css(this.element,this.property[flag][0])),//³õÊ¼Öµ
-			_change=distance,//±ä»¯Á¿
-			_stime=0,//³õÊ¼Ê±¼ä
-			_during=during||400,//¶¯»­Ê±¼ä
-			_fx=fx||'ease-out';//»º¶¯Ğ§¹û
-		function animate(t,b,c,d,fx){ //»º¶¯Ğ§¹û¼ÆËã¹«Ê½
+			_init=parseInt(this.css(this.element,this.property[flag][0])),//åˆå§‹å€¼
+			_change=distance,//å˜åŒ–é‡
+			_stime=0,//åˆå§‹æ—¶é—´
+			_during=during||400,//åŠ¨ç”»æ—¶é—´
+			_fx=fx||'ease-out';//ç¼“åŠ¨æ•ˆæœ
+		function animate(t,b,c,d,fx){ //ç¼“åŠ¨æ•ˆæœè®¡ç®—å…¬å¼
 			var re;
 			switch(fx){
 				case 'ease-in-out':
@@ -867,7 +868,7 @@ TouchScroll.prototype={
 		clearTimeout(this.timer[flag]); run();
 	},
 	start:function(e){
-		clearTimeout(this.timer[0]); clearTimeout(this.timer[1]);//Çå³ıÕıÔÚ½øĞĞµÄ¶¯»­
+		clearTimeout(this.timer[0]); clearTimeout(this.timer[1]);//æ¸…é™¤æ­£åœ¨è¿›è¡Œçš„åŠ¨ç”»
 		if(!this.supportsTouches)this.preventDefault(e);
 		this.element.onclick=null;
 		var target=e&&e.target||window.event.srcElement;
@@ -890,12 +891,12 @@ TouchScroll.prototype={
 		if(this.flag===false)return;
 		this.preventDefault(e); this.during=true;
 		moveLength=this[this.property[this.flag][4]]-this[this.property[this.flag][3]];
-		if(this.target){//Èç¹ûÍÏ¶¯µÄÊÇ¹ö¶¯Ìõ£¬ĞèÒª´¦ÀíÏÂ
-			var barLength=parseInt(this.css(this[this.property[this.flag][6]],this.property[this.flag][2]));//µÃµ½¹ö¶¯ÌõµÄ³¤¶È
+		if(this.target){//å¦‚æœæ‹–åŠ¨çš„æ˜¯æ»šåŠ¨æ¡ï¼Œéœ€è¦å¤„ç†ä¸‹
+			var barLength=parseInt(this.css(this[this.property[this.flag][6]],this.property[this.flag][2]));//å¾—åˆ°æ»šåŠ¨æ¡çš„é•¿åº¦
 			moveRatio=-moveLength/(this[this.property[this.flag][3]]-barLength);
 		}
 		offset=this.elementRect[this.flag]+rect[this.flag]*moveRatio;
-		/*±ßÔµ¼ì²â*/
+		/*è¾¹ç¼˜æ£€æµ‹*/
 		if(offset>0){
 			offset=offset/(offset/this[this.property[this.flag][3]]+1);	
 		}else if(offset<-moveLength){
@@ -910,12 +911,12 @@ TouchScroll.prototype={
 	end:function(e){
 		if(!this.disc)return;
 		if(typeof this.flag === 'number'){
-			var distance,//³¬³ö±ßÔµĞèÒªĞŞÕıµÄ³¤¶È
-				offset,//µ±Ç°Æ«ÒÆÖµ
-				now,//µ±Ç°Ê±¼ä
-				rect,//ÒÆ¶¯¾àÀëºá×İÊı¾İ
-				dist,//Êµ¼ÊÒÆ¶¯¾àÀë
-				time,//Êµ¼Ê»¨·ÑÊ±¼ä
+			var distance,//è¶…å‡ºè¾¹ç¼˜éœ€è¦ä¿®æ­£çš„é•¿åº¦
+				offset,//å½“å‰åç§»å€¼
+				now,//å½“å‰æ—¶é—´
+				rect,//ç§»åŠ¨è·ç¦»æ¨ªçºµæ•°æ®
+				dist,//å®é™…ç§»åŠ¨è·ç¦»
+				time,//å®é™…èŠ±è´¹æ—¶é—´
 				aviliLength;
 			distance=0; aviliLength=this[this.property[this.flag][4]]-this[this.property[this.flag][3]];
 			offset=parseInt(this.css(this.element,this.property[this.flag][0]));
@@ -923,19 +924,19 @@ TouchScroll.prototype={
 				distance=-offset;
 			}else if(offset<-aviliLength){
 				distance=-aviliLength-offset;
-			}else if(!this.target){//ÍÏ¶¯µÄ²»ÊÇ¹ö¶¯ÌõÇÒÎ´³¬³ö±ß½ç
-				//¼ÆËã³ö×î½ü²»³¬¹ı200ºÀÃëÄÚÊı¾İ£¬Ä¿µÄÊÇµÃ³ö×î½üÒ»´Î¿ìËÙÒÆ¶¯Ëù»¨·ÑµÄÊ±¼äºÍÒÆ¶¯¾àÀë£¬´Ó¶ø¼ÆËã³ö»º¶¯¾àÀë³¤¶È
+			}else if(!this.target){//æ‹–åŠ¨çš„ä¸æ˜¯æ»šåŠ¨æ¡ä¸”æœªè¶…å‡ºè¾¹ç•Œ
+				//è®¡ç®—å‡ºæœ€è¿‘ä¸è¶…è¿‡200è±ªç§’å†…æ•°æ®ï¼Œç›®çš„æ˜¯å¾—å‡ºæœ€è¿‘ä¸€æ¬¡å¿«é€Ÿç§»åŠ¨æ‰€èŠ±è´¹çš„æ—¶é—´å’Œç§»åŠ¨è·ç¦»ï¼Œä»è€Œè®¡ç®—å‡ºç¼“åŠ¨è·ç¦»é•¿åº¦
 				now=new Date();
 				while(this.disc[0].length && now-this.disc[0][0]>200){
 					this.disc[0].shift();
 					this.disc[1].shift();
 				}
 				if(this.disc[0].length){
-					time=now-this.disc[0][0];//Ê±¼ä
+					time=now-this.disc[0][0];//æ—¶é—´
 					rect=[this.endPos.x-this.disc[1][0].x,this.endPos.y-this.disc[1][0].y];
-					dist=rect[this.flag];//¾àÀë
-					if(Math.abs(dist)>20){//¼«¶ÌÊ±¼äÄÚÒÆ¶¯¾àÀë´óÓÚ20
-						distance=(2-time/200)*dist;	//¼ÆËã³ö»º¶¯ĞèÒªÒÆ¶¯µÄ¾àÀë
+					dist=rect[this.flag];//è·ç¦»
+					if(Math.abs(dist)>20){//æçŸ­æ—¶é—´å†…ç§»åŠ¨è·ç¦»å¤§äº20
+						distance=(2-time/200)*dist;	//è®¡ç®—å‡ºç¼“åŠ¨éœ€è¦ç§»åŠ¨çš„è·ç¦»
 					}
 				}
 			}
@@ -950,7 +951,7 @@ TouchScroll.prototype={
 		var wheelDelta=e.wheelDelta || e.detail && e.detail*-1 || 0,
 			wheelLength=120,
 			align=this.cfg.mouseAlign,
-			flag;//ÕâÀïflagÖ¸Êó±ê¹öÂÖµÄ·½Ïò£¬1±íÊ¾ÏòÉÏ£¬-1ÏòÏÂ
+			flag;//è¿™é‡ŒflagæŒ‡é¼ æ ‡æ»šè½®çš„æ–¹å‘ï¼Œ1è¡¨ç¤ºå‘ä¸Šï¼Œ-1å‘ä¸‹
 		if(this.wrapper && wheelDelta){
 			flag=wheelDelta/Math.abs(wheelDelta);
 			this._scroll(align,flag*wheelLength);
