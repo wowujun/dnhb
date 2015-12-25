@@ -1,12 +1,98 @@
-<%=render 'head'%>
 
-<div class="Cons">联系我们</div>
-<div class="contrat">
-  <%@sidecfgs.each do |f| %>
-      <p>公司名称：<%=f.company%></p>
-      <p>联系电话：<%=f.tel%></p>
-      <p>传真：<%=f.fax%></p>
-      <p>地址：<%=f.address%></p>
-      <p>订阅号：<%=f.dingyuhao%></p>
-  <%end%>
+<body class="body_single">
+<!--顶部开始-->
+<div id="top">
+  <!--频道导航 开始-->
+  <script>        window.onload = function (){
+
+    var oWin = document.getElementById("window");
+
+    var oLay = document.getElementById("overlay");
+
+    var oBtn = document.getElementById("popmenu");
+
+    var oClose = document.getElementById("close");
+
+    oBtn.onclick = function (){oLay.style.display = "block";oWin.style.display = "block"	};
+
+    oLay.onclick = function (){oLay.style.display = "none";oWin.style.display = "none"	}
+
+};
+
+</script>
+  <div style="margin-bottom:55px;">
+    <div id="toolbar">
+      <div class="fixed-brown">
+        <a class="ui-title" id="popmenu">公司信息</a>
+        <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
+        <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="window">
+      <ul class="windowlist">
+        <li>
+          <a  href="/sides?keywords=abouts" data-no-turbolink="true"><span>关于我们</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=products" data-no-turbolink="true"><span>产品中心</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=news" data-no-turbolink="true"><span>新闻资讯</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=contacts" data-no-turbolink="true"><span>联系我们</span></a>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div><!--频道导航 结束-->
+</div><!--顶部结束-->
+<div  id="content">
+  <div  class="single">
+    <ul class="wxlist">
+      <li>
+        <div class="ChannelName">
+          <h1>公司信息</h1>
+        </div>
+        <div class="ChannelContent"><!--引用百度地图API-->
+          <%@sidecfgs.each do |f| %>
+  <div>
+
+    <p>公司名称：<%=f.company%></p></div>
+
+  <div>
+
+    <p>联系电话：<%=f.tel%></p></div>
+
+  <div>
+
+    <p>传真：<%=f.fax%></p></div>
+
+  <div>
+
+    <p>地址：<%=f.address%></p></div>
+
+  <div>
+    <p>订阅号：<%=f.dingyuhao%></p>
+    <%=image_tag('54d85232ca2dd.jpg')%>
+    </div>
+<%end%>
+  </div>
+      </li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div><!--页脚开始-->
+<div>
+  <ul class="wxlist">
+    <a  href="#top">
+      <li>
+        <div  class="GoTop">
+          <%=image_tag("images/top.png")%>回顶部
+        </div>
+      </li>
+    </a>
+  </ul>
 </div>
+              </body>

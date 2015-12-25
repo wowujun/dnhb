@@ -15,7 +15,8 @@ class SidesController < ApplicationController
     @advertisements = Advertisement.all
     @sidecfgs = Sidecfg.all
      if params[:cla]=='product'
-       @sideproduct = Sideproduct.find(params[:id])
+       @sidecla = Sidecla.find(params[:id])
+       @sideproducts =@sidecla.sideproducts
      else
        @sidecontent = Sidecontent.find(params[:id])
      end

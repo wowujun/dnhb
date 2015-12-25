@@ -1,21 +1,87 @@
-<%=render "head"%>
-<!-- 移民项目开始 -->
-<% @sideclas.each do |sidecla| %>
-<!-- 移民项目结束 -->
-    <div class="Cons"><%=sidecla.name%></div>
-    <div class="brand">
-      <ul>
-        <%@sideproduct =sidecla.sideproducts.paginate(page: params[:page],per_page:6) %>
-        <% @sideproduct.each do |sideproduct| %>
-            <li><a href="/sides/<%=sideproduct.id%>?cla=product"><%=sideproduct.image.html_safe%></a><p><%=sideproduct.title%></p></li>
-        <%end%>
-</ul>
 
-</div>
-    <div class="page">
-      <%= will_paginate @sideproduct, :previous_label => '上一页', :next_label => '下一页' %>
+
+
+<title>产品中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<body  class="body_product">
+
+
+<!--顶部开始-->
+<div id="top">
+  <!--频道导航 开始-->
+  <script>        window.onload = function (){
+
+      var oWin = document.getElementById("window");
+
+      var oLay = document.getElementById("overlay");
+
+      var oBtn = document.getElementById("popmenu");
+
+      var oClose = document.getElementById("close");
+
+      oBtn.onclick = function (){oLay.style.display = "block";oWin.style.display = "block"	};
+
+      oLay.onclick = function (){oLay.style.display = "none";oWin.style.display = "none"	}
+
+  };
+
+  </script>
+  <div style="margin-bottom:55px;">
+    <div id="toolbar">
+      <div class="fixed-brown">
+        <a class="ui-title" id="popmenu">产品展示</a>
+        <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
+        <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
+      </div>
     </div>
-<%end%>
+    <div id="overlay"></div>
+    <div id="window">
+      <ul class="windowlist">
+        <li>
+          <a  href="/sides?keywords=abouts" data-no-turbolink="true"><span>关于我们</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=products" data-no-turbolink="true"><span>产品中心</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=news" data-no-turbolink="true"><span>新闻资讯</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=contacts" data-no-turbolink="true"><span>联系我们</span></a>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div><!--频道导航 结束-->
+</div>
 
 
-<%=render "footer"%>
+
+
+
+
+<div  id="content" >
+  <div  class="product" >
+    <!--子频道样式有三种（图文、文字、橱窗），默认均为微信样式  0：默认,1：图文,2：文字,3：橱窗,4：相册--><!--3|橱窗-->
+    <ul class="channellist">
+      <% @sideclas.each do |sidecla| %>
+          <%@sideproduct =sidecla.sideproducts.find_by_sidecla_id(sidecla.id) %>
+      <li>
+        <a href="/sides/<%=sidecla.id%>?cla=product">
+          <div class="ChannelIcon"><%=@sideproduct.image.html_safe%></div>
+          <div class="ChannelName"><%=sidecla.name%></div>
+        </a>
+      </li>
+
+      <%end%>
+
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div><!--页脚开始-->
+
+
+<div><ul class="wxlist"><a  href="#top"><li><div  class="GoTop"><%=image_tag("images/top.png")%>回顶部</div></li></a></ul></div></div><!--页脚结束--></body>

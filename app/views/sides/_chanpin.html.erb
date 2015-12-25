@@ -1,13 +1,85 @@
-<%render 'head'%>
-<!-- 最终页介绍开始 -->
 
-<div class="Cons"><a href="index.html">首页</a> > <a href="consultation.html">产品展示</a></div>
-<div class="end">
-  <div class="end_title"><%=@sideproduct.title%></div>
-  <div class="end_con">
-    <%=@sideproduct.image.html_safe%>
-    <p> <%=@sideproduct.content.html_safe%></p>
-  </div>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<body>
+<!--顶部开始-->
+<div id="top"><!--频道导航 开始--><script>        window.onload = function (){
+
+    var oWin = document.getElementById("window");
+
+    var oLay = document.getElementById("overlay");
+
+    var oBtn = document.getElementById("popmenu");
+
+    var oClose = document.getElementById("close");
+
+    oBtn.onclick = function (){oLay.style.display = "block";oWin.style.display = "block"	};
+
+    oLay.onclick = function (){oLay.style.display = "none";oWin.style.display = "none"	}
+
+};
+
+</script>
+  <div style="margin-bottom:55px;">
+    <div id="toolbar">
+      <div class="fixed-brown">
+        <a class="ui-title" id="popmenu">关于我们</a>
+        <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
+        <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="window">
+      <ul class="windowlist">
+        <li>
+          <a  href="/sides?keywords=abouts" data-no-turbolink="true"><span>关于我们</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=products" data-no-turbolink="true"><span>产品中心</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=news" data-no-turbolink="true"><span>新闻资讯</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=contacts" data-no-turbolink="true"><span>联系我们</span></a>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div><!--频道导航 结束-->
+</div><!--顶部结束-->
+
+
+
+<div  id="content">
+  <div class="product">
+    <ul class="wxlist">
+
+      <% @sideproducts.each do |sideproduct| %>
+      <li>
+        <div class="InfoPicture">
+          <%=sideproduct.image.html_safe%>
+        </div>
+
+        <div class="InfoContent">
+          <h1><%=sideproduct.title%></h1>
+          <p>
+            <%=sideproduct.content.html_safe%>
+          </p>
+
 </div>
-<!-- 最终页介绍结束 -->
-<%render 'footer'%>
+      </li>
+
+
+      <%end%>
+    </ul>
+
+
+
+
+
+</div>
+</div>
+<div id="footer"><!-- 微信分享导引 开始-->
+<div><ul class="wxlist"><a  href="#top"><li><div  class="GoTop"><%=image_tag("images/top.png")%>回顶部</div></li></a></ul></div></div><!--页脚结束--></body>

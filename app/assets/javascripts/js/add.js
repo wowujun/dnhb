@@ -14,10 +14,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require js/jquery-1.4.2.min.js
-//= require js/js.js
-//= require js/ks-switch.pack.js
-//= require js/touchScroll.js
-//= require js/device.js
-//= require js/device.min.js
-//= require js/swipe.js
+//= require js/iscroll.js
+//= require js/jquery-1.7.2.min.js
+//= require js/common.js
+//= require js/jquery.min.js
+//= require js/jquery.flexslider-min.js
+//= require  js/jquery.form.js
+
