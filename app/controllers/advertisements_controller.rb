@@ -29,7 +29,7 @@ class AdvertisementsController < ApplicationController
 
     respond_to do |format|
       if @advertisement.save
-        format.html { redirect_to @advertisement, notice: 'Advertisement was successfully created.' }
+        format.html { redirect_to @advertisement, notice: '图片上传成功！' }
         format.json { render :show, status: :created, location: @advertisement }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AdvertisementsController < ApplicationController
   def update
     respond_to do |format|
       if @advertisement.update(advertisement_params)
-        format.html { redirect_to @advertisement, notice: 'Advertisement was successfully updated.' }
+        format.html { redirect_to @advertisement, notice: '图片修改成功！' }
         format.json { render :show, status: :ok, location: @advertisement }
       else
         format.html { render :edit }

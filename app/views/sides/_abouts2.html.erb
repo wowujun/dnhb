@@ -55,18 +55,20 @@
 <!--顶部结束-->
 <div  id="content">
   <% @sideabouts.each do |sideabout| %>
-  <div  class="single">
-    <ul class="wxlist">
-      <li>
-        <div class="ChannelName"><h1>公司简介</h1></div>
-        <div class="ChannelContent">
-          <td><%= sideabout.about.html_safe %></td>
-        </div>
-      </li>
-    </ul>
-    <div class="clear"></div>
-  </div>
-      <%end%>
+
+      <div  class="single">
+        <ul class="wxlist">
+          <li>
+            <div class="ChannelName"><h1>总经理致辞</h1></div>
+            <div class="ChannelContent">
+              <td><%= sideabout.speech.html_safe %></td>
+            </div>
+          </li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+
+  <%end%>
 </div><!--页脚开始-->
 <div><ul class="wxlist"><a  href="#top"><li><div  class="GoTop"><%=image_tag("images/top.png")%>回顶部</div></li></a></ul></div></div>
 </body>

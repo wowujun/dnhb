@@ -5,7 +5,7 @@ class SideproductsController < ApplicationController
   # GET /sideproducts
   # GET /sideproducts.json
   def index
-    @sideproducts = Sideproduct.all.paginate(page: params[:page],per_page:6).order("id desc")
+    @sideproducts = Sideproduct.all.paginate(page: params[:page],per_page:20).order("id desc")
   end
 
   # GET /sideproducts/1
@@ -29,7 +29,7 @@ class SideproductsController < ApplicationController
 
     respond_to do |format|
       if @sideproduct.save
-        format.html { redirect_to @sideproduct, notice: 'Sideproduct was successfully created.' }
+        format.html { redirect_to @sideproduct, notice: '上传图片成功！' }
         format.json { render :show, status: :created, location: @sideproduct }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SideproductsController < ApplicationController
   def update
     respond_to do |format|
       if @sideproduct.update(sideproduct_params)
-        format.html { redirect_to @sideproduct, notice: 'Sideproduct was successfully updated.' }
+        format.html { redirect_to @sideproduct, notice: '修改成功！' }
         format.json { render :show, status: :ok, location: @sideproduct }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SideproductsController < ApplicationController
   def destroy
     @sideproduct.destroy
     respond_to do |format|
-      format.html { redirect_to sideproducts_url, notice: 'Sideproduct was successfully destroyed.' }
+      format.html { redirect_to sideproducts_url, notice: '成功删除！' }
       format.json { head :no_content }
     end
   end

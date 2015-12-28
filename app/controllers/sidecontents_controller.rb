@@ -5,7 +5,7 @@ class SidecontentsController < ApplicationController
   # GET /sidecontents
   # GET /sidecontents.json
   def index
-    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:3)
+    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:30)
   end
 
   # GET /sidecontents/1
@@ -29,7 +29,7 @@ class SidecontentsController < ApplicationController
 
     respond_to do |format|
       if @sidecontent.save
-        format.html { redirect_to @sidecontent, notice: 'Sidecontent was successfully created.' }
+        format.html { redirect_to @sidecontent, notice: '创建成功！' }
         format.json { render :show, status: :created, location: @sidecontent }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SidecontentsController < ApplicationController
   def update
     respond_to do |format|
       if @sidecontent.update(sidecontent_params)
-        format.html { redirect_to @sidecontent, notice: 'Sidecontent was successfully updated.' }
+        format.html { redirect_to @sidecontent, notice: '更新成功！' }
         format.json { render :show, status: :ok, location: @sidecontent }
       else
         format.html { render :edit }
