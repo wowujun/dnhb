@@ -1,11 +1,13 @@
 class SidesController < ApplicationController
   layout 'stage'
+
   def index
     @sideclas = Sidecla.all
     @sidecfgs = Sidecfg.all
     @advertisements = Advertisement.all
     @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:4)
     @sidecontent =  Sidecontent.find_by_sql("SELECT * FROM sidecontents LIMIT 6")
+
     @sideabouts = Sideabout.all
 
   end

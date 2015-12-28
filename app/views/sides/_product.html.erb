@@ -65,17 +65,25 @@
 
 <div  id="content" >
   <div  class="product" >
-    <!--子频道样式有三种（图文、文字、橱窗），默认均为微信样式  0：默认,1：图文,2：文字,3：橱窗,4：相册--><!--3|橱窗-->
+
     <ul class="channellist">
       <% @sideclas.each do |sidecla| %>
-          <%@sideproduct =sidecla.sideproducts.find_by_sidecla_id(sidecla.id) %>
+          <%@sideproduct =sidecla.sideproducts.first %>
+          <%if @sideproduct%>
       <li>
         <a href="/sides/<%=sidecla.id%>?cla=product">
           <div class="ChannelIcon"><%=@sideproduct.image.html_safe%></div>
           <div class="ChannelName"><%=sidecla.name%></div>
         </a>
       </li>
-
+              <%else%>
+              <li>
+                <a href="/sides/<%=sidecla.id%>?cla=product">
+          
+                  <div class="ChannelName"><%=sidecla.name%></div>
+                </a>
+              </li>
+        <%end%>
       <%end%>
 
     </ul>
