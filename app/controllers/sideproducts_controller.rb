@@ -5,7 +5,7 @@ class SideproductsController < ApplicationController
   # GET /sideproducts
   # GET /sideproducts.json
   def index
-    @sideproducts = Sideproduct.all.paginate(page: params[:page],per_page:1)
+    @sideproducts = Sideproduct.all.paginate(page: params[:page],per_page:6).order("id desc")
   end
 
   # GET /sideproducts/1
