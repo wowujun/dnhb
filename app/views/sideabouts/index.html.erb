@@ -19,10 +19,10 @@
       <% @sideabouts.each do |sideabout| %>
           <tr>
 
-            <td><%= sideabout.about.truncate(60).html_safe %></td>
-            <td><%= sideabout.culture.truncate(40).html_safe %></td>
-            <td><%= sideabout.concept.truncate(60).html_safe %></td>
-            <td><%= sideabout.speech.truncate(60).html_safe %></td>
+            <td><%= truncate(strip_tags(sideabout.about), length: 40)%></td>
+            <td><%= truncate(strip_tags(sideabout.culture), length: 40)%></td>
+            <td><%= truncate(strip_tags(sideabout.concept), length: 40)%></td>
+            <td><%= truncate(strip_tags(sideabout.speech), length: 40)%></td>
             <td width="100px" align="center"><%= link_to "", sideabout,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', sideabout, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>
