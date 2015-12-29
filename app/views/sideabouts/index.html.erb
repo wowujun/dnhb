@@ -9,7 +9,6 @@
       <tr>
         <th>公司简介</th>
         <th>企业文化</th>
-        <th>荣誉资质</th>
         <th>环保理念</th>
         <th>总经理致辞</th>
         <th>操作</th>
@@ -19,11 +18,11 @@
       <tbody>
       <% @sideabouts.each do |sideabout| %>
           <tr>
-            <td><%= sideabout.about %></td>
-            <td><%= sideabout.culture %></td>
-            <td><%= sideabout.qualification %></td>
-            <td><%= sideabout.concept %></td>
-            <td><%= sideabout.speech %></td>
+
+            <td><%= sideabout.about.truncate(60).html_safe %></td>
+            <td><%= sideabout.culture.truncate(40).html_safe %></td>
+            <td><%= sideabout.concept.truncate(60).html_safe %></td>
+            <td><%= sideabout.speech.truncate(60).html_safe %></td>
             <td width="100px" align="center"><%= link_to "", sideabout,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', sideabout, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>

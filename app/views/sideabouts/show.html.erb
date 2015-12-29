@@ -10,27 +10,27 @@
     <div class="col-md-12 fluid-height ">
       <p>
         <span class="col-md-12" style="text-align: right;">公司简介:</span>
-        <%= @sideabout.about %>&nbsp;
+        <%= @sideabout.about.html_safe %>&nbsp;
       </p>
 
       <p>
         <span class="col-sm-12" style="text-align: right;">企业文化:</span>
-        <%= @sideabout.culture %>&nbsp;
+        <%= @sideabout.culture.html_safe %>&nbsp;
       </p>
 
       <p>
         <span class="col-sm-12" style="text-align: right;width: auto">荣誉资质:</span>
-        <%= @sideabout.qualification %>&nbsp;
+        <%= @sideabout.qualification.html_safe %>&nbsp;
       </p>
 
       <p>
         <span class="col-sm-3" style="text-align: right;">环保理念:</span>
-        <%= @sideabout.concept %>&nbsp;
+        <%= @sideabout.concept.html_safe %>&nbsp;
       </p>
 
       <p>
         <span class="col-sm-3" style="text-align: right;">总经理致辞:</span>
-        <%=  @sideabout.speech %>
+        <%=  @sideabout.speech.html_safe %>
       </p>
       <p>
         <%= link_to '编辑', edit_sideabout_path(@sideabout),class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>
