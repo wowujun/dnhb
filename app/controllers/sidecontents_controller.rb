@@ -5,7 +5,7 @@ class SidecontentsController < ApplicationController
   # GET /sidecontents
   # GET /sidecontents.json
   def index
-    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:30)
+    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:15).order("id desc")
   end
 
   # GET /sidecontents/1

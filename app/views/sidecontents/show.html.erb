@@ -2,9 +2,6 @@
 <p id="notice" style="align-content: center"><%= notice %></p>
 <div class="container fluid-height clearfix">
 
-
-
-
   <div class="row">
     <div class="col-lg-12" style="width: 100%" >
       <div class="widget-container fluid-height clearfix" style="padding: 10px;">
@@ -18,7 +15,7 @@
 
           <p>
             <span class="col-sm-12" style="text-align: right;">日期:</span>
-            <%= @sidecontent.date %>&nbsp;
+            <%= @sidecontent.date.strftime("%Y-%m-%d %H:%M:%S") %>&nbsp;
           </p>
           <p>
             <span class="col-sm-12" style="text-align: right;">内容:</span>

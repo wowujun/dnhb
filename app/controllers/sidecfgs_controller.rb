@@ -68,6 +68,6 @@ class SidecfgsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sidecfg_params
-      params.require(:sidecfg).permit(:company, :tel, :fax, :address, :dingyuhao,:image)
+      params.require(:sidecfg).permit(:company, :tel, :fax, :address,:hotline ,:dingyuhao,:image)
     end
 end
