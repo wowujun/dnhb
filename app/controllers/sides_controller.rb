@@ -2,7 +2,7 @@ class SidesController < ApplicationController
   layout 'stage'
 
   def index
-    @sideclas = Sidecla.all
+    @sideclas = Sidecla.all.order("id desc")
     @sidecfgs = Sidecfg.all
     @advertisements = Advertisement.all
     @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:11).order("id desc")
