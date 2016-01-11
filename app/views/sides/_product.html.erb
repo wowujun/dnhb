@@ -71,14 +71,14 @@
           <%@sideproduct =sidecla.sideproducts.first %>
           <%if @sideproduct%>
       <li>
-        <a href="/sides/<%=sidecla.id%>?cla=product">
+        <a href="/sides/<%=sidecla.id%>?cla=product" data-no-turbolink="true">
           <div class="ChannelIcon"><%=@sideproduct.image.html_safe%></div>
           <div class="ChannelName"><%=sidecla.name%></div>
         </a>
       </li>
               <%else%>
               <li>
-                <a href="/sides/<%=sidecla.id%>?cla=product">
+                <a href="/sides/<%=sidecla.id%>?cla=product" data-no-turbolink="true">
 
                   <div class="ChannelName"><%=sidecla.name%></div>
                 </a>
