@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110092823) do
+ActiveRecord::Schema.define(version: 20160111034341) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20160110092823) do
     t.string   "keywords",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "classcas", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "image",      limit: 255
+    t.text     "content",    limit: 65535
+    t.datetime "time"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "kindeditor_assets", force: :cascade do |t|
@@ -83,6 +92,14 @@ ActiveRecord::Schema.define(version: 20160110092823) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "sidenews", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "date"
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "sideproducts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "image",      limit: 255
@@ -91,6 +108,14 @@ ActiveRecord::Schema.define(version: 20160110092823) do
     t.datetime "updated_at",               null: false
     t.integer  "sidecla_id", limit: 4
     t.integer  "cla_id",     limit: 4
+  end
+
+  create_table "sideshixts", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "date"
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

@@ -25,24 +25,46 @@
           <li><a href="/admins">
             <span aria-hidden="true" class="icon-gears"></span>管理员设置</a>
           </li>
-          <li><a href="/sidecfgs">
-            <span aria-hidden="true" class="icon-male"></span>联系我们</a>
-          </li>
-          <li><a href="/sideclas">
-            <span aria-hidden="true" class="icon-sitemap"></span>产品类别</a>
-          </li>
-          <li><a href="/sidecontents">
-            <span aria-hidden="true" class="icon-user"></span>新闻中心</a>
-          </li>
-          <li><a href="/sideproducts">
-            <span aria-hidden="true" class="icon-calendar"></span>产品</a>
-          </li>
-          <li><a href="/advertisements">
-            <span aria-hidden="true" class="icon-picture"></span>广告</a>
-          </li>
           <li><a href="/sideabouts">
             <span aria-hidden="true" class="icon-reorder"></span>关于我们</a>
           </li>
+          <li class="dropdown"><a data-toggle="dropdown" href="#">
+
+            <span aria-hidden="true"class="icon-calendar"></span>产品<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "产品类别", sideclas_path %>
+              </li>
+              <li>
+                <%= link_to "产品中心", sideproducts_path %>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a data-toggle="dropdown" href="#">
+
+            <span aria-hidden="true"class="icon-user"></span>新闻中心<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "新闻中心", sidecontents_path %>
+              </li>
+              <li>
+                <%= link_to "公司时讯", sideshixts_path %>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/classcas">
+            <span aria-hidden="true" class="icon-sitemap"></span>经典案例</a>
+          </li>
+          <li><a href="/sidecfgs">
+            <span aria-hidden="true" class="icon-male"></span>联系我们</a>
+          </li>
+
+          <li><a href="/advertisements">
+            <span aria-hidden="true" class="icon-picture"></span>广告</a>
+          </li>
+
+
         </ul>
       </div>
     </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :classcas
+  resources :sideshixts
   resources :advertisements
   resources :sidecontents
   get 'logins/new'

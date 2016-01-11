@@ -1,6 +1,6 @@
 
 
-<title>关于我们</title>
+<title>公司时讯</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <body class="body_single">
@@ -27,7 +27,7 @@
   <div style="margin-bottom:55px;">
     <div id="toolbar">
       <div class="fixed-brown">
-        <a class="ui-title" id="popmenu">关于我们</a>
+        <a class="ui-title" id="popmenu">公司时讯</a>
         <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
         <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
       </div>
@@ -54,21 +54,26 @@
 </div>
 <!--顶部结束-->
 <div  id="content">
-  <% @sideabouts.each do |sideabout| %>
 
-      <div  class="single">
-        <ul class="wxlist">
-          <li>
-            <div class="ChannelName"><h1>荣誉资质</h1></div>
-            <div class="ChannelContent">
-              <td><%= sideabout.qualification.html_safe %></td>
-            </div>
-          </li>
-        </ul>
-        <div class="clear"></div>
+
+      <div  id="content">
+        <div class="article">
+          <!-- 30文章模型  31图片模型  32单页模型  33	链接模型  34视频模型   35下载模型  36产品模型--><!--频道样式微信样式  0默认, 1图文,  2文字,  3橱窗,   4相册--><!-- 文章模型--><!-- 文本样式 列表开始-->
+          <ul class="textlist">
+            <% @sideshixts.each do |sideshixt| %>
+          <li><a href="/sides/<%=sideshixt.id%>?cla=shixt"><p><%=sideshixt.title%><span class="arrow"></span></p></a></li>
+            <%end%>
+            <li>
+              <div class="page">
+                <%= will_paginate @sideshixts, :previous_label => '上一页', :next_label => '下一页' %>
+              </div>
+            </li>
+          </ul>
+          <!-- 文本样式 列表开始--><div class="clear"></div>
+          <div class="clear"></div>
+        </div>
       </div>
 
-  <%end%>
 </div><!--页脚开始-->
 <div><ul class="wxlist"><a  href="#top"><li><div  class="GoTop"><%=image_tag("images/top.png")%>回顶部</div></li></a></ul></div></div>
 </body>

@@ -1,0 +1,85 @@
+
+<title>公司时讯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body class="body_article">
+
+<div id="top">
+  <script>
+
+      window.onload = function (){
+
+          var oWin = document.getElementById("window");
+
+          var oLay = document.getElementById("overlay");
+
+          var oBtn = document.getElementById("popmenu");
+
+          var oClose = document.getElementById("close");
+
+          oBtn.onclick = function (){oLay.style.display = "block";oWin.style.display = "block"	};
+
+          oLay.onclick = function (){oLay.style.display = "none";oWin.style.display = "none"	}
+
+      };
+
+  </script>
+  <div style="margin-bottom:55px;">
+    <div id="toolbar">
+      <div class="fixed-brown">
+        <a class="ui-title" id="popmenu">公司时讯</a>
+        <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
+        <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="window">
+      <ul class="windowlist">
+        <li>
+          <a  href="/sides?keywords=abouts" data-no-turbolink="true"><span>关于我们</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=products" data-no-turbolink="true"><span>产品中心</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=news" data-no-turbolink="true"><span>新闻资讯</span></a>
+        </li>
+        <li>
+          <a  href="/sides?keywords=contacts" data-no-turbolink="true"><span>联系我们</span></a>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div><!--频道导航 结束-->
+</div>
+
+<div  id="content">
+  <div class="article">
+    <ul class="wxlist">
+      <li>
+        <h1><%=@sideshixt.title%></h1>
+        <div class="InfoTime"><%=@sideshixt.date.strftime("%Y-%m-%d %H:%M:%S")%></div>
+        <div class="InfoContent">
+          <p>
+            <%=@sideshixt.content.html_safe%>
+          </p>
+
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+</div><!--页脚开始-->
+-<div><ul class="wxlist">
+  <a  href="#top">
+    <li>
+      <div  class="GoTop">
+        <%=image_tag("images/top.png")%>回顶部
+      </div>
+    </li>
+  </a>
+</ul>
+</div>
+
+</div><!--页脚结束--></body>
+

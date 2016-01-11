@@ -1,6 +1,6 @@
 
 
-<title>关于我们</title>
+<title>经典案例</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <body class="body_single">
@@ -27,7 +27,7 @@
   <div style="margin-bottom:55px;">
     <div id="toolbar">
       <div class="fixed-brown">
-        <a class="ui-title" id="popmenu">关于我们</a>
+        <a class="ui-title" id="popmenu">经典案例</a>
         <a class="ui-btn-back" href="javascript:history.go(-1)" data-no-turbolink="true"></a>
         <a class="ui-btn-home" href="/sides"  data-no-turbolink="true"></a>
       </div>
@@ -54,23 +54,31 @@
 </div>
 <!--顶部结束-->
 <div  id="content">
-  <% @sideabouts.each do |sideabout| %>
+  <div class="product">
+    <ul class="wxlist">
 
-
-      <div  class="single">
-        <ul class="wxlist">
+      <% @classcas.each do |classca| %>
           <li>
-            <div class="ChannelName"><h1>环保理念</h1></div>
-            <div class="ChannelContent">
-              <td><%= sideabout.concept.html_safe %></td>
+            <div class="InfoPicture">
+              <%=classca.image.html_safe%>
+            </div>
+
+            <div class="InfoContent">
+              <h1><%=classca.title%></h1>
+              <h2><%=classca.time.strftime("%Y-%m-%d %H:%M:%S")%></h2>
+              <p>
+                <%=classca.content.html_safe%>
+              </p>
+
             </div>
           </li>
-        </ul>
-        <div class="clear"></div>
-      </div>
 
 
-  <%end%>
+      <%end%>
+    </ul>
+
+
+  </div>
 </div><!--页脚开始-->
 <div><ul class="wxlist"><a  href="#top"><li><div  class="GoTop"><%=image_tag("images/top.png")%>回顶部</div></li></a></ul></div></div>
 </body>
