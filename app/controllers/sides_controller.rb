@@ -5,10 +5,10 @@ class SidesController < ApplicationController
     @sideclas = Sidecla.all
     @sidecfgs = Sidecfg.all
     @advertisements = Advertisement.all
-    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:8)
+    @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:8).order("id desc")
     @sidecontent =  Sidecontent.find_by_sql("SELECT * FROM sidecontents LIMIT 6")
     @sideabouts = Sideabout.all
-    @sideshixts = Sideshixt.all.paginate(page: params[:page],per_page:8)
+    @sideshixts = Sideshixt.all.paginate(page: params[:page],per_page:8).order("id desc")
     @classcas = Classca.all
   end
 
