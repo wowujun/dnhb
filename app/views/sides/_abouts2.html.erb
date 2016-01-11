@@ -65,7 +65,7 @@
             <%end%>
             <li>
               <div class="page">
-                <%= will_paginate @sideshixts, :previous_label => '上一页', :next_label => '下一页' %>
+                <%= will_paginate @sideshixts, :previous_label => '上一页', :next_label => '下一页' ,'data-no-turbolink'=>true%>
               </div>
             </li>
           </ul>
