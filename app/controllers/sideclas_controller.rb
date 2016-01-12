@@ -29,7 +29,7 @@ class SideclasController < ApplicationController
 
     respond_to do |format|
       if @sidecla.save
-        format.html { redirect_to @sidecla, notice: 'Sidecla was successfully created.' }
+        format.html { redirect_to @sidecla, notice: '类别创建成功！' }
         format.json { render :show, status: :created, location: @sidecla }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SideclasController < ApplicationController
   def update
     respond_to do |format|
       if @sidecla.update(sidecla_params)
-        format.html { redirect_to @sidecla, notice: 'Sidecla was successfully updated.' }
+        format.html { redirect_to @sidecla, notice: '类别修改成功！' }
         format.json { render :show, status: :ok, location: @sidecla }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SideclasController < ApplicationController
   def destroy
     @sidecla.destroy
     respond_to do |format|
-      format.html { redirect_to sideclas_url, notice: 'Sidecla was successfully destroyed.' }
+      format.html { redirect_to sideclas_url, notice: '类别删除成功！' }
       format.json { head :no_content }
     end
   end

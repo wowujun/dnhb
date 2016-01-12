@@ -19,14 +19,15 @@
 -- Table structure for table `admins`
 --
 
-DROP TABLE IF EXISTS `sideshixts`;
+DROP TABLE IF EXISTS `classcas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sideshixts` (
+CREATE TABLE `classcas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `content` text,
+  `time` datetime DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -34,7 +35,5 @@ CREATE TABLE `sideshixts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
---
--- Table structure for table `sideproducts`
---
+
 

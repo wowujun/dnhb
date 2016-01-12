@@ -57,7 +57,7 @@ class AdvertisementsController < ApplicationController
   def destroy
     @advertisement.destroy
     respond_to do |format|
-      format.html { redirect_to advertisements_url, notice: 'Advertisement was successfully destroyed.' }
+      format.html { redirect_to advertisements_url, notice: '广告删除成功！' }
       format.json { head :no_content }
     end
   end

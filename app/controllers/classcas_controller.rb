@@ -29,7 +29,7 @@ class ClasscasController < ApplicationController
 
     respond_to do |format|
       if @classca.save
-        format.html { redirect_to @classca, notice: 'Classca was successfully created.' }
+        format.html { redirect_to @classca, notice: '案例添加成功！' }
         format.json { render :show, status: :created, location: @classca }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ClasscasController < ApplicationController
   def update
     respond_to do |format|
       if @classca.update(classca_params)
-        format.html { redirect_to @classca, notice: 'Classca was successfully updated.' }
+        format.html { redirect_to @classca, notice: '案例修改成功！' }
         format.json { render :show, status: :ok, location: @classca }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ClasscasController < ApplicationController
   def destroy
     @classca.destroy
     respond_to do |format|
-      format.html { redirect_to classcas_url, notice: 'Classca was successfully destroyed.' }
+      format.html { redirect_to classcas_url, notice: '案例成功删除！' }
       format.json { head :no_content }
     end
   end

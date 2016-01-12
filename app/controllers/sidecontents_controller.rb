@@ -30,7 +30,7 @@ class SidecontentsController < ApplicationController
 
     respond_to do |format|
       if @sidecontent.save
-        format.html { redirect_to @sidecontent, notice: '创建成功！' }
+        format.html { redirect_to @sidecontent, notice: '新闻创建成功！' }
         format.json { render :show, status: :created, location: @sidecontent }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class SidecontentsController < ApplicationController
   def update
     respond_to do |format|
       if @sidecontent.update(sidecontent_params)
-        format.html { redirect_to @sidecontent, notice: '更新成功！' }
+        format.html { redirect_to @sidecontent, notice: '新闻更新成功！' }
         format.json { render :show, status: :ok, location: @sidecontent }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class SidecontentsController < ApplicationController
   def destroy
     @sidecontent.destroy
     respond_to do |format|
-      format.html { redirect_to sidecontents_url, notice: 'Sidecontent was successfully destroyed.' }
+      format.html { redirect_to sidecontents_url, notice: '新闻删除成功！' }
       format.json { head :no_content }
     end
   end

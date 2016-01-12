@@ -29,7 +29,7 @@ class SideaboutsController < ApplicationController
 
     respond_to do |format|
       if @sideabout.save
-        format.html { redirect_to @sideabout, notice: 'Sideabout was successfully created.' }
+        format.html { redirect_to @sideabout, notice: '信息添加成功！' }
         format.json { render :show, status: :created, location: @sideabout }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SideaboutsController < ApplicationController
   def update
     respond_to do |format|
       if @sideabout.update(sideabout_params)
-        format.html { redirect_to @sideabout, notice: 'Sideabout was successfully updated.' }
+        format.html { redirect_to @sideabout, notice: '信息更新成功！' }
         format.json { render :show, status: :ok, location: @sideabout }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SideaboutsController < ApplicationController
   def destroy
     @sideabout.destroy
     respond_to do |format|
-      format.html { redirect_to sideabouts_url, notice: 'Sideabout was successfully destroyed.' }
+      format.html { redirect_to sideabouts_url, notice: '信息删除成功！' }
       format.json { head :no_content }
     end
   end
