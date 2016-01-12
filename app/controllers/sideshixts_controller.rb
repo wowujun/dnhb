@@ -30,7 +30,7 @@ class SideshixtsController < ApplicationController
 
     respond_to do |format|
       if @sideshixt.save
-        format.html { redirect_to @sideshixt, notice: 'Sideshixt was successfully created.' }
+        format.html { redirect_to @sideshixt, notice: '时讯录入成功！' }
         format.json { render :show, status: :created, location: @sideshixt }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class SideshixtsController < ApplicationController
   def update
     respond_to do |format|
       if @sideshixt.update(sideshixt_params)
-        format.html { redirect_to @sideshixt, notice: 'Sideshixt was successfully updated.' }
+        format.html { redirect_to @sideshixt, notice: '时讯更新成功！' }
         format.json { render :show, status: :ok, location: @sideshixt }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class SideshixtsController < ApplicationController
   def destroy
     @sideshixt.destroy
     respond_to do |format|
-      format.html { redirect_to sideshixts_url, notice: 'Sideshixt was successfully destroyed.' }
+      format.html { redirect_to sideshixts_url, notice: '时讯删除成功！' }
       format.json { head :no_content }
     end
   end
