@@ -11,6 +11,7 @@
         <th></th>
         <th>标题</th>
         <th>日期</th>
+        <th>置顶状态</th>
         <th>操作</th>
       </tr>
       </thead>
@@ -20,6 +21,11 @@
             <td><i class="icon-user"></i></td>
             <td><%= sideshixt.title %></td>
             <td><%= sideshixt.date.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <%if sideshixt.status==1 %>
+            <td>置顶</td>
+            <%else%>
+                <td>不置顶</td>
+                <%end%>
             <td><%= link_to "", sideshixt,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', sideshixt, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>
@@ -31,7 +37,7 @@
     </div>
     <br>
 
-    <%= link_to ' 新建新闻', new_sideshixt_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+    <%= link_to ' 新建时讯', new_sideshixt_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
   </div>
 </div>
 

@@ -1,3 +1,4 @@
+
 function adminstatuschange()
 {
     if (document.getElementById("statuschange").checked) {
@@ -10,6 +11,17 @@ function adminstatuschange()
 
 }
 
+function sideshixtstatuschange()
+{
+    if (document.getElementById("statuschange").checked) {
+        document.getElementById("sideshixt_status").value = "1";
+    }
+    else {
+        document.getElementById("sideshixt_status").value = "0";
+    }
+
+
+}
 function tariffchange()
 {
     if (document.getElementById("isdefaultchange").checked) {

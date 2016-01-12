@@ -32,6 +32,26 @@
         </div>
       </tr>
       <tr>
+        <div>
+          <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :状态 %></td>
+          <td >
+            <div style="display: none;">
+              <%= f.number_field :status, value:1, class:"form-control" %>
+            </div>
+
+            <div class="toggle-switch text-toggle-switch" data-off-label="不置顶" data-on="primary" data-on-label="置顶">
+              <% if @sideshixt.status == 0 %>
+                  <input id="statuschange" name="statuschange" type="checkbox" onchange="javascript:sideshixtstatuschange()">
+              <% else %>
+                  <input checked="" id="statuschange" name="statuschange" type="checkbox" onchange="javascript:sideshixtstatuschange()">
+              <% end %>
+            </div>
+          </td>
+        </div>
+      </tr>
+
+
+      <tr>
         <td align="right" colspan="2" style="padding: 0px;"><div class="actions">
           <%= f.submit :"确定", class:"btn btn-primary-outline pull-right" %></td>
         </div>
