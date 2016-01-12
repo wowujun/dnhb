@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SideproductsController < ApplicationController
   before_action :authorize
   before_action :set_sideproduct, only: [:show, :edit, :update, :destroy]

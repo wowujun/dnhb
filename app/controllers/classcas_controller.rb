@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ClasscasController < ApplicationController
   before_action :set_classca, only: [:show, :edit, :update, :destroy]
 

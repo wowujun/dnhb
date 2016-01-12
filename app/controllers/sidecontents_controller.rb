@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SidecontentsController < ApplicationController
   before_action :authorize
   before_action :set_sidecontent, only: [:show, :edit, :update, :destroy]

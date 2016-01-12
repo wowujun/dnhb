@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SideshixtsController < ApplicationController
   before_action :authorize
   before_action :set_sideshixt, only: [:show, :edit, :update, :destroy]
