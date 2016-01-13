@@ -22,6 +22,14 @@
             <span class="col-sm-12" style="text-align: right;">内容:</span>
             <%= @sideshixt.content.html_safe %>&nbsp;
           </p>
+          <p>
+            <span class="col-sm-12" style="text-align: right;">状态:</span>
+            <%if @sideshixt.status==1 %>
+            置顶
+                <%else%>
+            不置顶
+            <%end%>
+          </p>
 
           <p>
             <%= link_to '编辑', edit_sideshixt_path(@sideshixt),class:"btn btn-primary-outline pull-right" ,'data-no-turbolink'=>true %>

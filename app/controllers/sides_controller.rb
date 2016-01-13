@@ -8,7 +8,9 @@ class SidesController < ApplicationController
     @sidecontents = Sidecontent.all.paginate(page: params[:page],per_page:11).order("id desc")
     @sidecontent =  Sidecontent.find_by_sql("SELECT * FROM sidecontents LIMIT 6")
     @sideabouts = Sideabout.all
-    @sideshixts = Sideshixt.all.paginate(page: params[:page],per_page:11).order("id desc")
+
+    sideshixt = Sideshixt.order("date desc")
+    @sideshixts = sideshixt.paginate(page: params[:page],per_page:20).order("status desc")
     @classcas = Classca.all
   end
 

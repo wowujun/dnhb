@@ -6,7 +6,9 @@ class SideshixtsController < ApplicationController
   # GET /sideshixts
   # GET /sideshixts.json
   def index
-    @sideshixts = Sideshixt.all.paginate(page: params[:page],per_page:15).order("id desc")
+    # sideshixt = Sideshixt.find_by_sql("select *from (select * from sideshixts order by date desc) c order by status desc")
+    sideshixt = Sideshixt.order("date desc")
+@sideshixts = sideshixt.paginate(page: params[:page],per_page:20).order("status desc")
   end
 
   # GET /sideshixts/1
@@ -71,6 +73,6 @@ class SideshixtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sideshixt_params
-      params.require(:sideshixt).permit(:title, :date, :content)
+      params.require(:sideshixt).permit(:title, :date, :content,:status)
     end
 end
