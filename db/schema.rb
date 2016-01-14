@@ -92,14 +92,6 @@ ActiveRecord::Schema.define(version: 20160112084652) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "sidenews", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.datetime "date"
-    t.text     "content",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "sideproducts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "image",      limit: 255
@@ -110,6 +102,8 @@ ActiveRecord::Schema.define(version: 20160112084652) do
     t.integer  "cla_id",     limit: 4
   end
 
+<<<<<<< HEAD
+=======
   create_table "sideshixts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.datetime "date"
@@ -119,4 +113,5 @@ ActiveRecord::Schema.define(version: 20160112084652) do
     t.integer  "status",     limit: 4
   end
 
+>>>>>>> d6e41dc0c3cb7466409143f1598a44d165d8b1df
 end
