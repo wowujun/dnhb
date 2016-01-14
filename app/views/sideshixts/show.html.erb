@@ -26,9 +26,12 @@
             <span class="col-sm-12" style="text-align: right;">状态:</span>
             <%if @sideshixt.status==1 %>
             置顶
-                <%else%>
+                <%else if @sideshixt.status==0%>
             不置顶
+                    <%else%>
+
             <%end%>
+          <%end%>
           </p>
 
           <p>

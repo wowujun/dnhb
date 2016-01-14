@@ -38,7 +38,6 @@
             <div style="display: none;">
               <%= f.number_field :status, value:1, class:"form-control" %>
             </div>
-
             <div class="toggle-switch text-toggle-switch" data-off-label="不置顶" data-on="primary" data-on-label="置顶">
               <% if @sideshixt.status == 0 %>
                   <input id="statuschange" name="statuschange" type="checkbox" onchange="javascript:sideshixtstatuschange()">
