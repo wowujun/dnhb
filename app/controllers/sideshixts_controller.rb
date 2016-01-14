@@ -6,9 +6,9 @@ class SideshixtsController < ApplicationController
   # GET /sideshixts
   # GET /sideshixts.json
   def index
-    # sideshixt = Sideshixt.find_by_sql("select *from (select * from sideshixts order by date desc) c order by status desc")
-    sideshixt = Sideshixt.order("date desc")
-@sideshixts = sideshixt.paginate(page: params[:page],per_page:20).order("status desc")
+     sideshixt = Sideshixt.find_by_sql("select *from (select * from sideshixts order by date desc) c order by status desc")
+    #sideshixt = Sideshixt.order("date desc")
+@sideshixts = Sideshixt.paginate(page: params[:sideshixt],per_page:20).order("id desc")
   end
 
   # GET /sideshixts/1
